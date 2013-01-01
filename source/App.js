@@ -63,7 +63,7 @@ enyo.kind({
 				]}
 			]},
 			{kind:"AroundList", name:"postList", rowsPerPage:25, classes:"post-list", onSetupItem:"setupPost", fit:true, aboveComponents: [
-				{classes:"profile", showing:false, components: [
+				{classes:"profile", name:"profile", showing:false, components: [
 					{kind:"Image", name:"cover", onload:"resizeHandler", classes:"profile-banner"},
 					{classes:"profile-header", components: [
 						{kind:"Image", name:"avatar", classes:"profile-thumbnail"},

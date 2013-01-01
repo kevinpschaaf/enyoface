@@ -2,8 +2,8 @@ enyo.kind({
 	name: "App",
 	fit: true,
 	components: [
-		{kind:"Panels", name:"topViews", classes:"enyo-fit", components: [
-			{kind:"LoginView", onLoggedIn:"loggedIn"},
+		{kind:"Panels", index:1, name:"topViews", classes:"enyo-fit", components: [
+			{kind:"LoginView", onLoggedIn:"loggedIn", onLoggedOut:"loggedOut"},
 			{kind:"MainView", onRequestLogout:"requestLogout"}
 		]}
 	],
@@ -22,6 +22,9 @@ enyo.kind({
 	loggedIn: function(inSender, inEvent) {
 		this.$.mainView.setUser(inEvent.user);
 		this.$.topViews.setIndex(1);
+	},
+	loggedOut: function() {
+		this.$.topViews.setIndex(0);
 	},
 	requestLogout: function() {
 		this.$.loginView.logout();
@@ -59,13 +62,15 @@ enyo.kind({
 					{kind:"onyx.Icon", ontap:"toggleAttick", src:"assets/icons/log.png"}
 				]}
 			]},
-			{kind:"AroundList", name:"postList", rowsPerPage:25, classes:"post-list", onSetupItem:"setupPost", fit:true, aboveComponents: [
-				{kind:"Image", name:"cover", onload:"resizeHandler", classes:"profile-banner"},
-				{classes:"profile-header", components: [
-					{kind:"Image", name:"avatar", classes:"profile-thumbnail"},
-					{name:"profileName", classes:"profile-name"}
-				]},
-				{classes:"profile-info", name:"profileInfo"}
+			{kind:"AroundList", showing:false, name:"postList", rowsPerPage:25, classes:"post-list", onSetupItem:"setupPost", fit:true, aboveComponents: [
+				{classes:"profile", components: [
+					{kind:"Image", name:"cover", onload:"resizeHandler", classes:"profile-banner"},
+					{classes:"profile-header", components: [
+						{kind:"Image", name:"avatar", classes:"profile-thumbnail"},
+						{name:"profileName", classes:"profile-name"}
+					]},
+					{classes:"profile-info", name:"profileInfo"}
+				]}
 			], components: [
 				{kind: "Post", name:"post", onPreloadImage:"preloadImage"}
 			]}
@@ -97,6 +102,7 @@ enyo.kind({
 		this.$.postList.refresh();
 	},
 	userChanged: function() {
+		this.$.postList.setShowing(true);
 		this.$.profileInfo.destroyClientControls();
 		this.$.profileName.setContent(this.user.name);
 		this.$.avatar.setSrc("https://graph.facebook.com/" + this.user.id +"/picture?type=large");

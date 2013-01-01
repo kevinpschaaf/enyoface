@@ -1,0 +1,121 @@
+{
+   "id": "551120007",
+   "name": "Kevin Schaaf",
+   "first_name": "Kevin",
+   "last_name": "Schaaf",
+   "link": "https://www.facebook.com/kevinpschaaf",
+   "username": "kevinpschaaf",
+   "birthday": "09/28/1978",
+   "hometown": {
+      "id": "108278809193914",
+      "name": "Martinsville, Indiana"
+   },
+   "location": {
+      "id": "114952118516947",
+      "name": "San Francisco, California"
+   },
+   "work": [
+      {
+         "employer": {
+            "id": "128406917206273",
+            "name": "Palm, Inc."
+         },
+         "location": {
+            "id": "113428915334642",
+            "name": "Sunnyvale, California"
+         },
+         "position": {
+            "id": "218212651639438",
+            "name": "Product Manager, Enyo Framework"
+         },
+         "start_date": "2011-08"
+      },
+      {
+         "employer": {
+            "id": "97546408397",
+            "name": "Bose"
+         },
+         "start_date": "2002-09",
+         "end_date": "2010-07"
+      },
+      {
+         "employer": {
+            "id": "129882197046802",
+            "name": "Home Computing Network"
+         },
+         "location": {
+            "id": "110556885632390",
+            "name": "Tokyo, Japan"
+         },
+         "start_date": "2001-06",
+         "end_date": "2002-08"
+      }
+   ],
+   "education": [
+      {
+         "school": {
+            "id": "106249676072748",
+            "name": "Indian Creek Senior High School"
+         },
+         "year": {
+            "id": "131821060195210",
+            "name": "1997"
+         },
+         "type": "High School"
+      },
+      {
+         "school": {
+            "id": "48457068615",
+            "name": "INSEAD The Business School for the World"
+         },
+         "year": {
+            "id": "144044875610606",
+            "name": "2011"
+         },
+         "concentration": [
+            {
+               "id": "195676580460390",
+               "name": "MBA"
+            }
+         ],
+         "type": "College"
+      },
+      {
+         "school": {
+            "id": "112406658771240",
+            "name": "Rose\u2013Hulman Institute of Technology"
+         },
+         "year": {
+            "id": "132393000129123",
+            "name": "2001"
+         },
+         "concentration": [
+            {
+               "id": "112377098773944",
+               "name": "Computer Engineering"
+            }
+         ],
+         "type": "College"
+      }
+   ],
+   "gender": "male",
+   "relationship_status": "Married",
+   "significant_other": {
+      "name": "Meg Schaaf",
+      "id": "1219284265"
+   },
+   "timezone": -8,
+   "locale": "en_US",
+   "languages": [
+      {
+         "id": "109549852396760",
+         "name": "Japanese"
+      },
+      {
+         "id": "103088979730830",
+         "name": "Mandarin Chinese"
+      }
+   ],
+   "verified": true,
+   "updated_time": "2012-12-07T00:53:03+0000"
+}

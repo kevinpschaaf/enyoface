@@ -5,3 +5,167 @@
 .nice-padding {
 	padding: 15px;
 }
+
+.panel-main {
+	width: 100%;
+	background: white;
+    -moz-box-shadow: 0 0 19px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 0 19px rgba(0,0,0,0.8);
+    box-shadow: 0 0 19px rgba(0,0,0,0.8);
+}
+
+.panel-basement {
+	background: #32333d;
+	color: white;
+}
+
+.onyx-toolbar {
+	background-color: #4451b4;
+	color: white;
+	padding: 3px 3px 4px 3px;
+}
+
+.onyx-toolbar .onyx-button {
+	background-color: #4451b4;
+	color: white;
+	padding: 4px 10px;
+}
+
+.icon-wide {
+	width: 44px;
+}
+
+.main-iconbar {
+	text-align: center;
+}
+
+.main-iconbar > * {
+	display: inline-block;
+}
+
+.profile-banner {
+	width:100%;
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #CCC;
+}
+
+.profile-header {
+	position:relative;
+	height:70px;
+}
+
+.profile-thumbnail {
+	height:100px;
+	width:100px;
+	display: inline-block;
+	position:relative;
+	top:-60px;
+	background: white;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #CCC;
+}
+
+.profile-name {
+	display: inline-block;
+	position:relative;
+	top:-100px;
+	font-weight: bold;
+	font-size: 1.3em;
+	color: #444;
+}
+
+.profile-info {
+	padding: 10px;
+	font-size: 0.9em;
+	color: gray;
+}
+
+.post-list {
+	background: #DDD;
+}
+
+.post {
+	margin: 10px;
+	border: 1px solid #CCC;
+	background: white;
+}
+
+.post-container {
+	padding: 10px;
+}
+
+.post-header {
+	margin-bottom:10px;
+}
+
+.post-header > * {
+	display: inline-block;
+}
+
+.post-avatar {
+	height: 30px;
+	width: 30px;
+	background:#EEE;
+	margin-right: 10px;
+}
+
+.post-name {
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.post-image {
+	margin: 10px 0 0 -15px;
+	border: 1px solid #CCC;
+}
+
+.post-date {
+	font-size: 0.9em;
+	color: gray;
+}
+
+.post-footer {
+	border-top: 1px solid #CCC;
+	background: #EEE;
+	padding:5px 10px 5px 10px;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #225;
+}
+
+.panel-basement .onyx-input-decorator {
+	border-radius: 15px;
+	margin: 4px 4px;
+	padding: 0 0 0 5px;
+}
+
+.panel-basement .onyx-toolbar {
+	background-color: #32333d;
+	border: none;
+	padding-left: 10px;	
+	color: #CCCCDD;
+	font-size: 0.8em;
+	text-transform: capitalize;
+}
+
+.onyx-toolbar.basement-header {
+	padding: 4px;
+}
+
+.basement-row > * {
+	display: inline-block;
+}
+
+.basement-row {
+	padding: 10px;
+	border-top: 1px solid #44423d;
+	border-bottom: 1px solid #22223d;
+}
+
+.menu-icon {
+	height: 20px;
+	width: 20px;
+	background:#EEE;
+	margin-right: 10px;
+}

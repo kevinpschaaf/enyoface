@@ -62,8 +62,8 @@ enyo.kind({
 					{kind:"onyx.Icon", ontap:"toggleAttick", src:"assets/icons/log.png"}
 				]}
 			]},
-			{kind:"AroundList", showing:false, name:"postList", rowsPerPage:25, classes:"post-list", onSetupItem:"setupPost", fit:true, aboveComponents: [
-				{classes:"profile", components: [
+			{kind:"AroundList", name:"postList", rowsPerPage:25, classes:"post-list", onSetupItem:"setupPost", fit:true, aboveComponents: [
+				{classes:"profile", showing:false, components: [
 					{kind:"Image", name:"cover", onload:"resizeHandler", classes:"profile-banner"},
 					{classes:"profile-header", components: [
 						{kind:"Image", name:"avatar", classes:"profile-thumbnail"},
@@ -102,7 +102,7 @@ enyo.kind({
 		this.$.postList.refresh();
 	},
 	userChanged: function() {
-		this.$.postList.setShowing(true);
+		this.$.profile.setShowing(true);
 		this.$.profileInfo.destroyClientControls();
 		this.$.profileName.setContent(this.user.name);
 		this.$.avatar.setSrc("https://graph.facebook.com/" + this.user.id +"/picture?type=large");

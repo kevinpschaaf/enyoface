@@ -67,7 +67,7 @@ enyo.kind({
 				]},
 				{classes:"profile-info", name:"profileInfo"}
 			], components: [
-				{kind: "Post", name:"post", onRegisterImage:"registerImage"}
+				{kind: "Post", name:"post", onPreloadImage:"preloadImage"}
 			]}
 		]},
 		{kind:"ChatMenu"}
@@ -133,11 +133,14 @@ enyo.kind({
 			FB.api(this.nextNews, enyo.bind(this, "updateNewsFeed"));
 		}
 	},
-	registerImage: function(inSender, inEvent) {
+	preloadImage: function(inSender, inEvent) {
 		var post = inEvent.post;
 		post._pictureLoaded = false;
 		FB.api("/" + post.object_id, enyo.bind(this, function(object) {
 			var img = new Image();
+			if (!object.images || object.images.length === 0) {
+				return;
+			}
 			for (var i=0; i<object.images; i++) {
 				if (object.images[i].width < this.listBounds.width) {
 					i = Math.max(i-1, 0);
@@ -256,7 +259,7 @@ enyo.kind({
 		parentWidth:""
 	},
 	events: {
-		onRegisterImage:""
+		onPreloadImage:""
 	},
 	components: [
 		{classes:"post-container", components: [
@@ -284,7 +287,7 @@ enyo.kind({
 		this.$.avatar.setSrc("https://graph.facebook.com/" + this.data.from.id +"/picture");
 		if (this.data.picture && this.data._pictureLoaded === undefined) {
 			this.$.image.canGenerate = false;
-			this.doRegisterImage({post:this.data});
+			this.doPreloadImage({post:this.data});
 		} else if (this.data._pictureLoaded === true) {
 			this.$.image.canGenerate = true;
 			this.$.image.setSrc(this.data.picture);
@@ -305,7 +308,7 @@ enyo.kind({
 		{kind:"FacebookSDK", appId:"121143804719903", onInit:"facebookInit"},
 		{kind:"onyx.Toolbar", style:"text-align:center", content:"Login"},
 		{classes:"nice-padding", components: [
-			{kind:"FacebookLoginButton", perms:"read_stream,friends_online_presence,publish_checkins,publish_stream"}
+			{kind:"FacebookLoginButton", perms:"read_stream,friends_online_presence,publish_checkins,publish_stream,user_photos,user_location,user_videos,user_status"}
 		]}
 	],
     facebookInit: function() {

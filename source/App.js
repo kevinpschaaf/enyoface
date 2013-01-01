@@ -97,6 +97,7 @@ enyo.kind({
 		this.$.postList.refresh();
 	},
 	userChanged: function() {
+		this.$.profileInfo.destroyClientControls();
 		this.$.profileName.setContent(this.user.name);
 		this.$.avatar.setSrc("https://graph.facebook.com/" + this.user.id +"/picture?type=large");
 		this.$.cover.setSrc(this.user.cover.source);

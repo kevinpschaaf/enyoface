@@ -15,7 +15,7 @@
 		<script src="build/enyo.js"></script>
 		<script>
 			function isPhoneGapContext() {
-				return (enyo.platform.android || enyo.platform.ios);
+				return false; // (enyo.platform.android || enyo.platform.ios);
 			}
 			if (enyo.platform.android) {
 				document.write('<script src="assets\/android\/cordova-1.7.0.js"><\/script>');
@@ -32,8 +32,8 @@
 	<body class="enyo-unselectable">
 		<script>
 			if (!window.App) {
-				//alert('No application build found, redirecting to debug.html.');
-				//location = 'debug.html';
+				alert('No application build found, redirecting to debug.html.');
+				location = 'debug.html';
 			}
 			new App().renderInto(document.body);
 		</script>

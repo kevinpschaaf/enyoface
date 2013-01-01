@@ -308,7 +308,7 @@ enyo.kind({
 		{kind:"FacebookSDK", appId:"121143804719903", onInit:"facebookInit"},
 		{kind:"onyx.Toolbar", style:"text-align:center", content:"Login"},
 		{classes:"nice-padding", components: [
-			{kind:"FacebookLoginButton", perms:"read_stream,friends_online_presence,publish_checkins,publish_stream,user_photos,user_location,user_videos,user_status"}
+			{kind:"FacebookLoginButton", perms:"read_stream,friends_online_presence,publish_checkins,publish_stream,user_photos,user_location,user_videos,user_status,user_education_history,user_work_history"}
 		]}
 	],
     facebookInit: function() {
